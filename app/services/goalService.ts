@@ -1,14 +1,16 @@
-const goals = [
-  { id: crypto.randomUUID(), title:'Goal 1' },
-  { id: crypto.randomUUID(), title:'Goal 2' },
-  { id: crypto.randomUUID(), title:'Goal 3' }
-]
+const uri = 'http://localhost:3000/api/goals'
 
 export async function getGoals() {
-  return goals
+  const response = await fetch(uri)
+  return response.json()
 }
 
 export async function createGoal(goal: any) {
-  goal.id = crypto.randomUUID()
-  goals.push(goal)
+  await fetch(uri, {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(goal),
+  });
 }
