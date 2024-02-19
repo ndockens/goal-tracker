@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getGoals } from './services/goalService'
+import { MongoClient } from 'mongodb';
 
 export default async function Home() {
   const goals = await getGoals();
@@ -11,4 +11,18 @@ export default async function Home() {
       </div>
     </main>
   );
+}
+
+async function getGoals() {
+  const uri = process.env.MONGODB_URI as string
+  const client = new MongoClient(uri)
+
+    try {
+      client.connect()
+      const database = client.db('test')
+      const goals = await database.collection('goals').aggregate().toArray();
+      return goals
+    } finally {
+        await client.close()
+    }
 }
