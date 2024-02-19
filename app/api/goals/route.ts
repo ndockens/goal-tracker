@@ -8,8 +8,8 @@ export async function GET() {
     try {
       client.connect()
       const database = client.db('test')
-      const goals = await database.collection('goals').aggregate().toArray();
-      return NextResponse.json(goals, { status: 200 });
+      const goals = await database.collection('goals').aggregate().toArray()
+      return NextResponse.json(goals, { status: 200 })
     } catch {
       return NextResponse.json("An error occurred while retrieving the data.", { status: 500 })
     } finally {

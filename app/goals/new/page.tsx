@@ -1,20 +1,22 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { createGoal } from '../../services/goalService'
 
 export default function NewGoal() {
   const [title, setTitle] = useState("")
-  const router = useRouter()
 
   const onTitleChange = (e: any) => {
     setTitle(e.target.value)
   }
 
-  const onSubmit = () => {
-    createGoal({ title })
-    router.push('/')
+  const onSubmit = async () => {
+    await createGoal({ title })
+    returnToHomePage();
+  }
+
+  const returnToHomePage = () => {
+    window.location.assign('/') // TODO: Find a more performant way to do this
   }
 
   return (
