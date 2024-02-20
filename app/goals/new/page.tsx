@@ -21,10 +21,10 @@ export default function NewGoal() {
 
   return (
     <main className="bg-slate-900 flex flex-col items-center min-h-screen p-24">
-      <div className="flex flex-col items-center m-10 text-center">
+      <div className="bg-slate-800 flex flex-col items-center m-10 p-7 rounded-xl text-center">
         <div className="text-lg text-slate-50">What do you want to accomplish?</div>
-        <input name="title" type="text" value={title} onChange={onTitleChange} placeholder="e.g. Win the Nobel prize" className="bg-slate-800 min-w-64 m-6 p-3 rounded-xl text-slate-300 focus:outline-none focus:ring focus:ring-slate-400"></input>
-        <button className="bg-sky-500 m-3 p-3 rounded-xl text-sky-50 w-32 hover:bg-sky-400" onClick={onSubmit}>Submit</button>
+        <input name="title" type="text" value={title} onChange={onTitleChange} placeholder="e.g. Win the Nobel prize" className="bg-slate-700 min-w-64 mt-4 p-3 rounded-xl text-center text-slate-300 focus:outline-none focus:ring focus:ring-slate-400"></input>
+        <button className="bg-sky-500 mt-9 p-3 rounded-xl text-sky-50 w-32 hover:bg-sky-400" onClick={onSubmit}>Submit</button>
       </div>
     </main>
   );
