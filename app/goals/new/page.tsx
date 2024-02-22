@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { createGoal } from '../../services/goalService'
+import { createGoal } from '@/app/services/goalService'
 
 export default function NewGoal() {
   const [title, setTitle] = useState("")
