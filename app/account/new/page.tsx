@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { createAccount } from '@/app/services/accountService'
+import { createUser } from '@/app/services/userService'
 
 export default function NewAccount() {
   const [account, setAccount] = useState({ emailAddress: '', alias: '', password: '' })
@@ -25,7 +25,7 @@ export default function NewAccount() {
   }
 
   const onSubmit = async () => {
-    await createAccount(account)
+    await createUser(account)
     returnToHomePage();
   }
 
