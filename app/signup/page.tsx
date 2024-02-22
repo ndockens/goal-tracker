@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { createUser } from '@/app/services/userService'
 
 export default function SignUp() {
   const [user, setUser] = useState({ emailAddress: '', alias: '', password: '' })
@@ -25,8 +24,7 @@ export default function SignUp() {
   }
 
   const onSubmit = async () => {
-    await createUser(user)
-    returnToHomePage();
+    
   }
 
   const returnToHomePage = () => {

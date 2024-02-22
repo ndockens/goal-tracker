@@ -12,7 +12,7 @@ export default function NewGoal() {
 
   const onSubmit = async () => {
     await createGoal({ title })
-    returnToHomePage();
+    returnToHomePage()
   }
 
   const returnToHomePage = () => {
